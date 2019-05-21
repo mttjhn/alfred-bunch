@@ -25,32 +25,13 @@
 	<key>createdby</key>
 	<string>Matthew Johnson</string>
 	<key>description</key>
-	<string>A workflow to execute bunches</string>
+	<string>An Alfred workflow to execute bunches from the Bunch app</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
 	<string>Bunch</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>A26EEE90-A8FF-49E3-A687-83154998C38E</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -98,6 +79,25 @@
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>A26EEE90-A8FF-49E3-A687-83154998C38E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -118,7 +118,18 @@
 			<integer>120</integer>
 		</dict>
 	</dict>
+	<key>variables</key>
+	<dict>
+		<key>bunchesLocation</key>
+		<string>~/bunches</string>
+	</dict>
+	<key>variablesdontexport</key>
+	<array>
+		<string>bunchesLocation</string>
+	</array>
+	<key>version</key>
+	<string>1.0.2</string>
 	<key>webaddress</key>
-	<string>mttjhn.com</string>
+	<string>http://mttjhn.com</string>
 </dict>
 </plist>

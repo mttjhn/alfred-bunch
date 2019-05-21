@@ -10,6 +10,15 @@
 $ npm install --global alfred-bunch
 ```
 
+## Configuration
+
+1. Open Alfred Preferences. 
+2. Click on the "Workflows" tab and find Bunch.
+3. Click on the "Configure workflow and variables" button.
+4. Add the path to your Bunches folder in Workflow Environment Variables:
+    - `bunchLocation`: `/Users/yourname/bunches`
+5. Click "Save"
+
 *Requires [Node.js](https://nodejs.org) 4+ and the Alfred [Powerpack](https://www.alfredapp.com/powerpack/).*
 
 ## Usage
