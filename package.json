@@ -4,9 +4,14 @@
   "description": "An Alfred workflow to execute bunches from the Bunch app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "alfy-init",
+    "preuninstall": "alfy-cleanup"
   },
-  "author": "Matthew Johnson",
+  "author": {
+    "name": "Matthew Johnson",
+    "email": "matthew@mttjhn.com",
+    "url": "http://mttjhn.com"
+  },
   "license": "ISC",
   "dependencies": {
     "alfred-link": "^0.3.0",
