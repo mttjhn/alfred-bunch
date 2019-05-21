@@ -1,46 +1,40 @@
 const alfy = require('alfy');
 const glob = require("glob");
 
-const bunchFolder = '~/bunches';
+const bunchFolder = process.env.bunchesLocation;
 
 // Check the config
-if (alfy.config) {
-    var bunchLocation = alfy.config.get('bunchLocation');
-    if (bunchLocation === null) {
-        alfy.error("Missing configuration. Run bn-config with the full path to your bunches folder.")
-    }
-    else {
-        bunchFolder = bunchLocation;
-    }
+if (!bunchFolder) {
+    alfy.error("Missing configuration. Run bn-config with the full path to your bunches folder.");
 }
+else {
+    //Load the bunches and let the user pick
+    glob(bunchFolder + "/**/*.bunch", function (er, files) {
+        var bunches = []
 
-//Load the bunches and let the user pick
-glob(bunchFolder + "/**/*.bunch", function (er, files) {
-    var bunches = []
+        files.forEach(function (value, index) {
+            if (value.length > bunchFolder.length + 6) {
+                var bunchName = value.substr(bunchFolder.length + 1, value.length - bunchFolder.length - 7)
+                bunches.push(bunchName);
+            }
+        });
 
-    files.forEach(function (value, index) {
-        if (value.length > bunchFolder.length + 6) {
-            var bunchName = value.substr(bunchFolder.length + 1, value.length - bunchFolder.length - 7)
-            bunches.push(bunchName);
-        }
-    });
-
-    if (alfy.input) {
-        var resultList = alfy
-            .inputMatches(bunches)
-            .map(x => ({
+        if (alfy.input) {
+            var resultList = alfy
+                .inputMatches(bunches)
+                .map(x => ({
+                    title: x.toLowerCase(),
+                    subtitle: 'Action to run this bunch.',
+                    arg: 'x-bunch://open?bunch=' + x.toLowerCase()
+                }));
+            alfy.output(resultList);
+        } else {
+            var resultList = bunches.map(x => ({
                 title: x.toLowerCase(),
                 subtitle: 'Action to run this bunch.',
                 arg: 'x-bunch://open?bunch=' + x.toLowerCase()
             }));
-        alfy.output(resultList);
-    } else {
-        var resultList = bunches.map(x => ({
-            title: x.toLowerCase(),
-            subtitle: 'Action to run this bunch.',
-            arg: 'x-bunch://open?bunch=' + x.toLowerCase()
-        }));
-        alfy.output(resultList);
-    }
-});
-
+            alfy.output(resultList);
+        }
+    });
+}
