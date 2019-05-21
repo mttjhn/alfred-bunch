@@ -1,15 +1,25 @@
-alfred-bunch
-=====================
+# alfred-bunch
 
-This is a quick workflow that executes bunches using [Brett Terpstra's "Bunch" app](https://brettterpstra.com/projects/bunch/).
+> Run bunches using [Brett Terpstra's awesome Bunch app](https://brettterpstra.com/projects/bunch/) in macOS
 
-## Requirements
-1. [Alfred App 3](http://www.alfredapp.com/#download)
-2. [Alfred Powerpack](https://buy.alfredapp.com/)
+![](demo.gif)
 
-## Commands
-- `bn [input]`
-    * Optionally uses the input to filter the list of bunches. Choosing the name of a bunch from the list will execute it if the app is open.
+## Install
 
-## Contributors
-- [@mttjhn](https://github.com/mttjhn)
+```
+$ npm install --global alfred-bunch
+```
+
+*Requires [Node.js](https://nodejs.org) 4+ and the Alfred [Powerpack](https://www.alfredapp.com/powerpack/).*
+
+## Usage
+
+In Alfred, type `bn`, optionally filter the list by typing some keywords. Press <kbd>Enter</kbd> to run the selected bunch.
+
+## Related
+
+- [Alfy](https://github.com/sindresorhus/alfy) – Create Alfred workflows with ease
+
+## License
+
+MIT © [Matthew Johnson](https://github.com/mttjhn/alfred-bunch)

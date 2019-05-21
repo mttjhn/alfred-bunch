@@ -1,7 +1,18 @@
 const alfy = require('alfy');
 const glob = require("glob");
 
-const bunchFolder = '~/MegaSync/Apps/Bunch';
+const bunchFolder = '~/bunches';
+
+// Check the config
+if (alfy.config) {
+    var bunchLocation = alfy.config.get('bunchLocation');
+    if (bunchLocation === null) {
+        alfy.error("Missing configuration. Run bn-config with the full path to your bunches folder.")
+    }
+    else {
+        bunchFolder = bunchLocation;
+    }
+}
 
 //Load the bunches and let the user pick
 glob(bunchFolder + "/**/*.bunch", function (er, files) {

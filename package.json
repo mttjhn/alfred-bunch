@@ -12,9 +12,9 @@
     "email": "matthew@mttjhn.com",
     "url": "http://mttjhn.com"
   },
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "alfred-link": "^0.3.0",
+    "alfred-link": "*",
     "alfy": "*",
     "child_process": "*",
     "glob": "*"
