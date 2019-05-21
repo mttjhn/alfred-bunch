@@ -1,6 +1,6 @@
 {
   "name": "alfred-bunch",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "An Alfred workflow to execute bunches from the Bunch app",
   "main": "index.js",
   "scripts": {
