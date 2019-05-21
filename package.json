@@ -1,0 +1,17 @@
+{
+  "name": "alfred-bunch",
+  "version": "1.0.0",
+  "description": "An Alfred workflow to execute bunches from the Bunch app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthew Johnson",
+  "license": "ISC",
+  "dependencies": {
+    "alfred-link": "^0.3.0",
+    "alfy": "*",
+    "child_process": "*",
+    "glob": "*"
+  }
+}
