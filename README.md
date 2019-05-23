@@ -10,6 +10,8 @@
 $ npm install --global alfred-bunch
 ```
 
+*Requires [Node.js](https://nodejs.org) 4+ and the Alfred [Powerpack](https://www.alfredapp.com/powerpack/).*
+
 ## Configuration
 
 1. Open Alfred Preferences. 
@@ -18,8 +20,6 @@ $ npm install --global alfred-bunch
 4. Add the path to your Bunches folder in Workflow Environment Variables:
     - `bunchLocation`: `/Users/yourname/bunches`
 5. Click "Save"
-
-*Requires [Node.js](https://nodejs.org) 4+ and the Alfred [Powerpack](https://www.alfredapp.com/powerpack/).*
 
 ## Usage
 
