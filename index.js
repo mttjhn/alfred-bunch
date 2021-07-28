@@ -6,6 +6,19 @@ const bunchToggle = (process.env.bunchToggle === 'true') ? true : false;
 
 const bunchCommand = bunchToggle === true ? 'toggle' : 'open';
 
+const bunchSettings = [
+    {
+        title: "Bunch Settings ...",
+        subtitle: "Show Bunch Preference Pane",
+        arg: `x-bunch://prefs`
+    },
+    {
+        title: "Refresh Your Bunches",
+        subtitle: "Use this if you changed any of your bunch files",
+        arg: `x-bunch://setPref?configDir=${bunchFolder}`
+    }
+];
+
 // Check the config
 if (!bunchFolder) {
     alfy.error("Missing configuration. Run bn-config with the full path to your bunches folder.");
@@ -37,7 +50,9 @@ else {
                 subtitle: 'Action to run this bunch.',
                 arg: `x-bunch://${bunchCommand}?bunch=` + x.toLowerCase()
             }));
-            alfy.output(resultList);
+
+            // prepend the bunch settings command and return the list
+            alfy.output(bunchSettings.concat(resultList));
         }
     });
 }
