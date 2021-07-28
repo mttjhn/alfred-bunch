@@ -138,7 +138,7 @@
 		<key>bunchToggle</key>
 		<string>true</string>
 		<key>bunchesLocation</key>
-		<string>/Users/johnchristopher/gitprojects/Bunches</string>
+		<string></string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
