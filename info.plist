@@ -35,10 +35,31 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>A26EEE90-A8FF-49E3-A687-83154998C38E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -77,30 +98,24 @@
 			<key>uid</key>
 			<string>72E158F4-F85A-451A-91D6-DB4B6D3969EA</string>
 			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>A26EEE90-A8FF-49E3-A687-83154998C38E</string>
-			<key>version</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>
+	## Directions:
+
+	### Configuration  
+	bunchFolder - (~/bunches) - This is the path to your bunches (defaults to `~/bunches`)
+	bunchToggle - (true/false) - If `true` it will toggle the selected bunch, either opening or closing depending on current state. (default to `false`)
+
+		
+	### Usage
+	1. trigger Alfred
+	2. type bn (You should see your list of bunches)
+	3. continue typing to reduce the list of bunches
+	4. Return will open/toggle the selected bunch.
+	</string>
 	<key>uidata</key>
 	<dict>
 		<key>72E158F4-F85A-451A-91D6-DB4B6D3969EA</key>
@@ -120,12 +135,15 @@
 	</dict>
 	<key>variables</key>
 	<dict>
+		<key>bunchToggle</key>
+		<string>true</string>
 		<key>bunchesLocation</key>
-		<string></string>
+		<string>/Users/johnchristopher/gitprojects/Bunches</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
 		<string>bunchesLocation</string>
+		<string>bunchToggle</string>
 	</array>
 	<key>version</key>
 	<string>1.0.3</string>

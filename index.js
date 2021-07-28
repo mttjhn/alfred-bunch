@@ -2,6 +2,9 @@ const alfy = require('alfy');
 const glob = require("glob");
 
 const bunchFolder = process.env.bunchesLocation;
+const bunchToggle = (process.env.bunchToggle === 'true') ? true : false;
+
+const bunchCommand = bunchToggle === true ? 'toggle' : 'open';
 
 // Check the config
 if (!bunchFolder) {
@@ -25,14 +28,14 @@ else {
                 .map(x => ({
                     title: x.toLowerCase(),
                     subtitle: 'Action to run this bunch.',
-                    arg: 'x-bunch://open?bunch=' + x.toLowerCase()
+                    arg: `x-bunch://${bunchCommand}?bunch=` + x.toLowerCase()
                 }));
             alfy.output(resultList);
         } else {
             var resultList = bunches.map(x => ({
                 title: x.toLowerCase(),
                 subtitle: 'Action to run this bunch.',
-                arg: 'x-bunch://open?bunch=' + x.toLowerCase()
+                arg: `x-bunch://${bunchCommand}?bunch=` + x.toLowerCase()
             }));
             alfy.output(resultList);
         }
